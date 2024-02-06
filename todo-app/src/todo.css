@@ -1,0 +1,12 @@
+body{
+    background-color: rgb(171, 169, 169);
+}
+.tasks{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    margin-left:200px;
+    width: 800px;
+    justify-content: space-evenly;
+}
+
