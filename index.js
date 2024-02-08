@@ -28,6 +28,6 @@ app.use("/",taskRouter.router)
 app.use("*",function(req,res){
     res.sendFile(path.join(__dirname,"./todo-app/build/index.html"))
 })
-app.listen(8080,()=>{
-    console.log("Server Started Listening on port 8080")
+app.listen(process.env.port,()=>{
+    console.log(`Server Started Listening on port ${process.env.port}`)
 })
