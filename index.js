@@ -5,15 +5,18 @@ const morgan  = require("morgan");
 const app = express();
 const taskRouter = require('./routes/todoRoutes')
 const path = require('path')
+const dotenv = require("dotenv")
 
 app.use(express.static(path.join(__dirname,"./todo-app/build")))
 app.use(morgan("dev"));
 app.use(cors())
 app.use(express.json())
 
+dotenv.config()
+
 const connectdb = async()=>{
     try{
-        const cons  =await mongoose.connect("mongodb://localhost:27017/todo")
+        const cons  =await mongoose.connect(process.env.mongoURL)
         console.log("Connected Successfully")
     }catch(err){
         console.log(err)
